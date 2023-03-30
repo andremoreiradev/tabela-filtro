@@ -86,19 +86,22 @@ let bebidas = [
 ];
 
 
+function atualizarTabela(lista) {
+    lista.map((cada) => {
+        document.getElementById('tabela-dados').innerHTML += `
+            <tr>
+                <td>${cada.id}</td>
+                <td>${cada.nome}</td>
+                <td>${cada.descricao}</td>
+                <td>${cada.quantidade}</td>
+                <td>${cada.foto}</td>
+                <td>
+                    <button class="btn btn-outline-warning btn-sm">Editar</button>
+                    <button class="btn btn-outline-danger btn-sm">Excluir</button>
+                </td>
+            </tr>
+        `;
+    });
+}
 
-bebidas.map((cada) => {
-    document.getElementById('tabela-dados').innerHTML += `
-        <tr>
-            <td>${cada.id}</td>
-            <td>${cada.nome}</td>
-            <td>${cada.descricao}</td>
-            <td>${cada.quantidade}</td>
-            <td>${cada.foto}</td>
-            <td>
-                <button class="btn btn-outline-warning btn-sm">Editar</button>
-                <button class="btn btn-outline-danger btn-sm">Excluir</button>
-            </td>
-        </tr>
-    `;
-})
+atualizarTabela(bebidas);
